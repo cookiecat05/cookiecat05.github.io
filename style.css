@@ -165,7 +165,6 @@ h2 {
 .projectcard img {
   display: block;
   width: 220px;
-  height: 220px;
   padding: 8px;   
   border: 2px dotted hsl(30, 100%, 80%); 
 }
