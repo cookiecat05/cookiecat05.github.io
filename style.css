@@ -1,0 +1,434 @@
+/*FONTS*/
+
+@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;600&display=swap');
+
+
+
+
+/*UNIVERSAL BROWSER RESET*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fffbf3;
+  color: hsl(220, 40%, 40%);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 14px;
+}
+
+
+
+
+/*HEADER*/
+
+.header {
+  background: rgba(0, 85, 147, 1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+header {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 48px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo:link, .logo:visited, .logo:hover, .logo:active {
+  font-family: 'Hi Melody', cursive;
+  font-weight: 400;
+  font-size: 56px;
+  color: #ffffee;
+  text-shadow: 0px 3px 8px hsl(220, 50%, 40%);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav li {
+  margin-left: 24px;
+}
+
+a:link, a:visited {
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffee;
+  text-shadow: 0px 2px 8px hsl(220, 50%, 40%);
+}
+
+a:hover {
+  text-shadow: 0 8px 10px hsl(220, 50%, 40%);
+  font-size: 25px;
+}
+
+a:active {
+  text-shadow: 0 0px 1px #ffffee;
+  font-size: 24px;
+}
+
+li.current {
+  padding-bottom: 8px;
+  border-bottom: 2px dotted #ffffee;
+}
+
+.hamburger {
+  display: none;
+}
+
+
+
+/*FOOTER*/
+
+.footer {
+  background: rgba(0, 85, 147, 1);
+  width: 100%; 
+  position: fixed;
+  bottom: 0;
+}
+
+footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 0;
+  font-size: 16px; 
+  font-weight: 400;
+  color: #ffffee;
+  text-align: center;
+  text-shadow: 0px 0px 8px hsl(220, 50%, 40%);
+}
+
+.header {
+  background: linear-gradient(180deg, hsla(220, 80%, 80%, 1.0), 80%, hsla(30, 90%, 70%, 0.1));
+  box-shadow:  0 0 16px 8px hsla(30, 100%, 90%, 0.2);
+}
+
+.footer {
+  background: linear-gradient(0deg, hsla(220, 90%, 80%, 1.0), 80%, hsla(30, 90%, 70%, 0.1));
+  box-shadow:  0 0 16px 8px hsla(30, 100%, 90%, 0.2);
+}
+
+
+/*HOME PAGE*/
+
+main {
+  margin: 276px auto 208px auto;
+  max-width: 820px;
+}  
+
+.cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+h2 {
+  margin-bottom: 80px;
+  font-size: 32px;
+  color: coral;
+}
+
+.content h2 {
+  border-bottom: 2px dotted hsla(30, 100%, 80%, 1.0); 
+  padding-bottom: 24px;
+  text-align: center;
+}
+
+.projectcard {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 220px;
+  margin-bottom: 80px; 
+  text-align: center;
+}
+
+.hiddencard {
+  display: none;
+}
+
+.projectcard img {
+  display: block;
+  width: 220px;
+  height: 220px;
+  padding: 8px;   
+  border: 2px dotted hsl(30, 100%, 80%); 
+}
+
+.projectcard .title {
+  margin-top: 16px;
+  height: 36px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.projectcard p {
+  font-size: 18px;
+  font-weight: 200;
+  margin-bottom: 16px; 
+}
+
+.projectcard:hover {
+  box-shadow: 0 0 16px 16px hsla(30, 100%, 90%, 0.7);
+}
+
+
+
+
+/*ABOUT, CONTACT PAGES*/
+
+main.about, main.contact {
+  display: flex;
+  flex-direction: row;
+}
+
+.about h2, .contact h2 {
+  flex: 2;
+}
+
+.about p {
+  font-size: 16px;
+  line-height: 24px;
+  flex: 4;
+}
+
+form {
+  flex: 4;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+input {
+  height: 32px;
+  width: 100%;
+  border: 1px solid coral;
+  margin-bottom: 32px;
+  padding: 8px;
+  font-size: 16px;
+  color: #222222;
+}
+
+input:focus {
+  box-shadow: 0 0px 16px 2px hsla(20, 90%, 80%, 1.0); 
+  border: none;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid coral;
+  margin-bottom: 48px;
+  resize: vertical;
+  padding: 8px;
+  font-size: 16px;
+  color: #222222;
+}
+
+textarea:focus {
+  box-shadow: 0 0px 16px 2px hsla(20, 90%, 80%, 1.0); 
+  border: none;
+}
+
+button {
+  width: 160px; 
+  height: 40px;
+  box-shadow: 
+    inset 2px 2px 2px 0px hsl(30, 60%, 80%, 0.5), 
+    inset 4px 4px 8px 0px hsl(30, 60%, 80%, 0.5), 
+    -2px -2px 2px 0px hsl(0, 0%, 100%, 1), 
+    -4px -4px 8px 0px hsl(0, 0%, 100%, 1);
+  border: 1px solid hsla(30, 80%, 95%, 0.5);
+  border-radius: 8px;
+  color: hsl(220, 50%, 40%);
+  font-size: 16px;
+  font-weight: 700;
+  background: hsla(30, 80%, 95%, 0.5);
+}
+
+/* 
+--ORIGINAL BUTTON--
+button {
+  width: 160px; 
+  height: 40px;
+  border: 0px solid coral;
+  border-radius: 8px;
+  color: #ffffee;
+  font-size: 16px;
+  font-weight: 700;
+  background: hsla(20, 100%, 70%, 1.0);
+} */
+
+button:hover {
+  box-shadow: 0 4px 8px 2px hsl(20, 90%, 80%);
+  cursor: pointer;
+}
+
+button:active {
+  background: hsla(20, 80%, 65%, 1.0);
+  box-shadow: 0 0px 8px 4px #ffffee;
+}
+
+
+
+
+
+/*MOBILE LAYOUT*/
+
+@media screen and (max-width: 960px) {
+  
+  body {
+    min-width: 220px;
+  }
+  
+  header {
+    padding: 16px 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .logo:link, .logo:visited, .logo:hover, .logo:active {
+    font-size: 40px;
+  }
+  
+  .hamburger {
+    display: none;
+    
+    width: 8px;
+    height: 8px;
+    background: white;
+  }
+  
+  ul {
+    flex-direction: column;
+  }
+  
+  nav li {
+    margin: 4px 0;
+  }
+  
+  a:link, a:visited {
+    font-size: 14px;
+  }
+
+  a:hover {
+    text-shadow: 0 0 10px coral;
+    font-size: 16px;
+  }
+  
+  
+  li.current {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  
+  li.current a{
+    color: hsla(20, 100%, 100%, 1.0);
+    text-shadow: 0 4px 8px coral;
+    font-size: 16px;
+  }
+  
+  
+    
+  
+  footer {
+    padding: 16px 0;
+  }
+  
+  footer p {
+    font-size: 12px;
+  }
+
+  
+  
+  
+  main {
+    margin: 240px auto 88px;
+  }
+  
+  .content {
+    flex-flow: column;
+    margin-left: 32px;
+  }
+  
+  .cards {
+    justify-content: space-evenly;
+  } 
+  
+  .projectcard {
+    margin-bottom: 32px;
+    margin-right: 16px;
+  }
+
+  
+  main.about, main.contact {
+    flex-direction: column;
+    max-width: 65%;
+  }
+
+  .projectcard .title {
+    height: auto;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .projectcard p {
+    font-size: 14px;
+    font-weight: 200;
+    margin-bottom: 16px; 
+  }
+
+  
+  .about h2, .contact h2 {
+    font-size: 20px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  
+  .about p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  
+  label {
+    font-size: 14px; 
+  }
+  
+  input, textarea, button>p {
+    font-size: 14px;
+  }
+  
+  input {
+    margin-bottom: 16px;
+  }
+  
+  textarea {
+    margin-bottom: 32px;
+  }
+  
+  button {
+    align-self: center;
+  }
+  
+}
