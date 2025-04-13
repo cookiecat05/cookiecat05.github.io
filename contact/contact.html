@@ -27,6 +27,89 @@
         say hello!
       </h2>
 
+      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Web3Forms Access Key -->
+        <input type="hidden" name="access_key" value="6056bb20-b4b9-4887-a492-e0b77c67e665">
+    
+        <!-- Spam Protection: Honeypot -->
+        <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
+    
+        <!-- Optional: Redirect after submit -->
+        <input type="hidden" name="redirect" value="thank-you.html">
+    
+        <label>Name:
+          <input type="text" name="name" required>
+        </label>
+    
+        <label>Email:
+          <input type="email" name="email" required>
+        </label>
+    
+        <label>Message:
+          <textarea name="message" required></textarea>
+        </label>
+    
+        <button type="submit">Send Message</button>
+    
+        <p id="form-status"></p>
+      </form>
+    
+      <script>
+        const form = document.getElementById("contact-form");
+        const status = document.getElementById("form-status");
+    
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+          status.textContent = "Sending...";
+          status.className = "";
+    
+          // Spam bot check
+          if (form.honeypot.value !== "") {
+            status.textContent = "Spam detected!";
+            status.className = "error";
+            return;
+          }
+    
+          // Basic client-side validation
+          if (!form.name.value.trim() || !form.email.value.trim() || !form.message.value.trim()) {
+            status.textContent = "Please fill out all fields.";
+            status.className = "error";
+            return;
+          }
+    
+          const formData = new FormData(form);
+    
+          try {
+            const res = await fetch(form.action, {
+              method: "POST",
+              body: formData
+            });
+    
+            const json = await res.json();
+    
+            if (json.success) {
+              window.location.href = form.querySelector('input[name="redirect"]').value;
+            } else {
+              status.textContent = "Oops! Something went wrong.";
+              status.className = "error";
+            }
+          } catch (err) {
+            status.textContent = "Submission failed. Please try again.";
+            status.className = "error";
+          }
+        });
+      </script>
+
+
+
+
+
+
+
+
+
+      <!-- OLD FORM CODE
+      
       <form action="" method="post">
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" required/>
@@ -40,7 +123,7 @@
         <button id="submit">
           <p>send message</p>
         </button>
-      </form>
+      </form> -->
     
     </main>
   </div>
