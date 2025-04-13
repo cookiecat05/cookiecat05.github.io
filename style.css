@@ -265,6 +265,32 @@ button {
   background: hsla(30, 80%, 95%, 0.5);
 }
 
+
+
+
+/* NEW CODE FOR FORM */
+
+#form-status {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.status-sending {
+  color: #555;
+}
+
+.status-success {
+  color: #28a745;
+}
+
+.status-error {
+  color: #dc3545;
+}
+
+
+
 /* 
 --ORIGINAL BUTTON--
 button {

@@ -13,7 +13,7 @@
       
       <nav>
         <ul>
-          <li><a href="../index.html">home</a></li>
+          <li><a href="../index.html">work</a></li>
           <li><a href="../about/about.html">about</a></li>
           <li class="current"><a href="contact.html">contact</a></li>
         </ul>
@@ -34,9 +34,6 @@
         <!-- Spam Protection: Honeypot -->
         <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
     
-        <!-- Optional: Redirect after submit -->
-        <input type="hidden" name="redirect" value="thank-you.html">
-    
         <label>Name:
           <input type="text" name="name" required>
         </label>
@@ -50,9 +47,15 @@
         </label>
     
         <button type="submit">Send Message</button>
-    
-        <p id="form-status"></p>
       </form>
+
+      <p id="form-status"></p>
+        
+      <!-- FOR TESTING FORM STATUS STYLING -->
+      <button type="button" onclick="showStatus('Sending...', 'status-sending')">Test Sending</button>
+      <button type="button" onclick="showStatus('Success!', 'status-success')">Test Success</button>
+      <button type="button" onclick="showStatus('Error occurred.', 'status-error')">Test Error</button>
+      <!-- FOR TESTING FORM STATUS STYLING -->
     
       <script>
         const form = document.getElementById("contact-form");
@@ -61,19 +64,19 @@
         form.addEventListener("submit", async function (e) {
           e.preventDefault();
           status.textContent = "Sending...";
-          status.className = "";
+          status.className = "status-sending";
     
           // Spam bot check
           if (form.honeypot.value !== "") {
             status.textContent = "Spam detected!";
-            status.className = "error";
+            status.className = "status-error";
             return;
           }
     
           // Basic client-side validation
           if (!form.name.value.trim() || !form.email.value.trim() || !form.message.value.trim()) {
             status.textContent = "Please fill out all fields.";
-            status.className = "error";
+            status.className = "status-error";
             return;
           }
     
@@ -88,16 +91,25 @@
             const json = await res.json();
     
             if (json.success) {
-              window.location.href = form.querySelector('input[name="redirect"]').value;
+              window.location.href = "thank-you.html";
             } else {
               status.textContent = "Oops! Something went wrong.";
-              status.className = "error";
+              status.className = "status-error";
             }
           } catch (err) {
             status.textContent = "Submission failed. Please try again.";
-            status.className = "error";
+            status.className = "status-error";
           }
         });
+
+        // FORM STATUS TESTING ONLY
+  function showStatus(message, className) {
+    status.textContent = message;
+    status.className = className;
+  }
+  // FORM STATUS TESTING ONLY
+
+
       </script>
 
 
